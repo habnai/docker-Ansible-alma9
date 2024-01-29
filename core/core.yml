@@ -113,7 +113,7 @@ services:
       - TASKS=1 # Portainer
       - VOLUMES=1 # Portainer
   # Portainer - WebUI for Containers
-  portainer:
+  frigate:
     <<: *common-keys-core # See EXTENSION FIELDS at the top
     container_name: portainer
     image: portainer/portainer-ce:latest
@@ -129,16 +129,3 @@ services:
       - ${DATADIR}/portainer/data:/data # Change to local directory if you want to save/transfer config locally
     environment:
       <<: *default-tz-puid-pgid
-  # homarr - Application Dashboard
-  homarr:
-    <<: *common-keys-apps # See EXTENSION FIELDS at the top
-    image: ghcr.io/ajnart/homarr:latest
-    container_name: homarr
-    networks:
-      - net_proxy
-      - socket_proxy
-    ports:
-      - "127.0.0.1:7575:7575"
-    volumes:
-      - ${DATADIR}/homarr/configs:/app/data/configs
-      - ${DATADIR}/homarr/icons:/app/public/icons

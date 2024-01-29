@@ -11,17 +11,13 @@
     - dnf-plugins-core
     - yum-utils
     - git
-    - apt-transport-https
     - ca-certificates
     - wget
-    - software-properties-common
     - gnupg2
     - curl
-  when: ansible_distribution == 'Alma Linux'
 
 - name: Add Docker repository
   command: dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
-  when: ansible_distribution == 'Alma Linux'
 
 - name: Install Docker
   dnf:
@@ -33,14 +29,12 @@
     - containerd.io
     - docker-buildx-plugin
     - docker-compose-plugin
-  when: ansible_distribution == 'Alma Linux'
 
 - name: Start and enable Docker service
   service:
     name: docker
     state: started
     enabled: yes
-  when: ansible_distribution == 'Alma Linux'
 
 - name: Ensure docker group exists
   group:

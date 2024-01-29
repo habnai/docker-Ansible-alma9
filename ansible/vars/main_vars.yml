@@ -1,14 +1,14 @@
 ---
 # all non secret vars
-zfs: {
-  poolName: dataPool,
+hdd: {
+  poolName: DataPool,
 }
 
-adminuser: user # should be an existing one from above
+adminuser: habnai # should be an existing one from above
 
 docker: {
   external_network: net_proxy,
-  data_dir: '/{{zfs.poolName}}/docker/data',
+  data_dir: '/{{hdd.poolName}}/docker/data',
   # data for docker env
   PUID: '1000',
   PGID: '115'
