@@ -4,7 +4,7 @@ hdd: {
   poolName: DataPool,
 }
 
-adminuser: habnai # should be an existing one from above
+adminuser: user # should be an existing one from above
 
 docker: {
   external_network: net_proxy,
