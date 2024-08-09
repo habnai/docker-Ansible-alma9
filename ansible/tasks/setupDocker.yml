@@ -51,29 +51,3 @@
     path: "{{docker.data_dir}}"
     state: directory
 
-- name: Create folder for custom
-  file:
-    path: "{{docker.data_dir}}/custom"
-    state: directory
-
-- name: Create folder for logs
-  file:
-    path: "{{docker.data_dir}}/logs"
-    state: directory
-
-- name: Create folder for scripts
-  file:
-    path: "{{docker.data_dir}}/scripts"
-    state: directory
-
-- name: Create folder for secrets
-  file:
-    path: "{{docker.data_dir}}/secrets"
-    state: directory
-
-- name: Create folder for shared
-  file:
-    path: "{{docker.data_dir}}/shared"
-    state: directory
-
-
