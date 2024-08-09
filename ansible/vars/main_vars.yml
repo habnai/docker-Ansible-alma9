@@ -1,7 +1,7 @@
 ---
 # all non secret vars
 hdd: {
-  poolName: DataPool,
+  poolName: DockerPool,
 }
 
 adminuser: user # should be an existing one from above
